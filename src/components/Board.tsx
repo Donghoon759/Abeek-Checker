@@ -17,7 +17,7 @@ const StyledBoard = styled.div`
   height: 100vh;
 `;
 
-const Board: React.FC = () => {
+const Board = () => {
   return (
     <StyledBoard>
       <Semester />

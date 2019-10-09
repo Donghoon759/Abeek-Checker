@@ -6,7 +6,7 @@ interface SemesterWrapperProps {
   children: JSX.Element[] | JSX.Element;
 }
 
-const SemesterWrapper: React.FC<SemesterWrapperProps> = props => {
+const SemesterWrapper = (props: SemesterWrapperProps) => {
   return <StyledSemesterWrapper>{props.children}</StyledSemesterWrapper>;
 };
 

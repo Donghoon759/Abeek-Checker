@@ -4,7 +4,7 @@ import SubjectWrapper from './SubjectWrapper';
 import SubjectHeader from './SubjectHeader';
 import SubjectFooter from './SubjectFooter';
 
-const Subject: React.FC = () => {
+const Subject = () => {
   return (
     <SubjectWrapper>
       <SubjectHeader

@@ -20,7 +20,7 @@ interface SemesterHeaderProps {
   totalDesignCredit: number;
 }
 
-const SemesterHeader: React.FC<SemesterHeaderProps> = props => {
+const SemesterHeader = (props: SemesterHeaderProps) => {
   return (
     <>
       <StyledSemesterHeader>
@@ -39,6 +39,15 @@ const SemesterHeader: React.FC<SemesterHeaderProps> = props => {
       </SubHeader>
     </>
   );
+};
+
+SemesterHeader.defaultProps = {
+  title: 'hello',
+  totalCredit: 1,
+  totalMajorCredit: 1,
+  totalMajorBaseCredit: 1,
+  totalSoyangCredit: 1,
+  totalDesignCredit: 1,
 };
 
 export default SemesterHeader;

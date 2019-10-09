@@ -17,7 +17,7 @@ interface SubjectHeaderProps {
   subjectDesignCredit: number;
 }
 
-const SubjectHeader: React.FC<SubjectHeaderProps> = props => {
+const SubjectHeader = (props: SubjectHeaderProps) => {
   return (
     <>
       <StyledSubjectWrapper>

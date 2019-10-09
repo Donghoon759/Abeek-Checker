@@ -4,7 +4,7 @@ import { StyledSemesterFooter } from '../../styles/Component';
 
 interface SemesterFooterProps {}
 
-const SemesterFooter: React.FC = () => {
+const SemesterFooter = () => {
   return <StyledSemesterFooter>Footer</StyledSemesterFooter>;
 };
 

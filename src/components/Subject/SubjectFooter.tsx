@@ -8,7 +8,7 @@ const StyledSubject = styled.div`
   display: flexbox;
 `;
 
-const SubjectFooter: React.FC = () => {
+const SubjectFooter = () => {
   return <StyledSubject>aaa</StyledSubject>;
 };
 
