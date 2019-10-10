@@ -1,13 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   Title,
-  SubContent,
   RightContent,
   CenterContent,
-  SubHeader,
+  ContentRow,
   StyledSemesterHeader,
-  StyledSemesterTitle,
 } from '../../styles/Component';
 
 // 총 학점, 전공, 전공기반, 기본소양, 설계
@@ -27,27 +24,27 @@ const SemesterHeader = (props: SemesterHeaderProps) => {
         <Title>{props.title}</Title>
         <RightContent>총 {props.totalCredit}/150학점</RightContent>
       </StyledSemesterHeader>
-      <SubHeader>
+      <ContentRow>
         <CenterContent>전공 : {props.totalMajorCredit}/70</CenterContent>
         <CenterContent>
           전공기반 : {props.totalMajorBaseCredit}/22
         </CenterContent>
-      </SubHeader>
-      <SubHeader>
+      </ContentRow>
+      <ContentRow>
         <CenterContent>설계 : {props.totalDesignCredit}/16</CenterContent>
         <CenterContent>기본소양 : {props.totalSoyangCredit}/15</CenterContent>
-      </SubHeader>
+      </ContentRow>
     </>
   );
 };
 
-// SemesterHeader.defaultProps = {
-//   title: 'hello',
-//   totalCredit: 1,
-//   totalMajorCredit: 1,
-//   totalMajorBaseCredit: 1,
-//   totalSoyangCredit: 1,
-//   totalDesignCredit: 1,
-// };
+SemesterHeader.defaultProps = {
+  title: '1학년 1학기',
+  totalCredit: 21,
+  totalMajorCredit: 3,
+  totalMajorBaseCredit: 0,
+  totalSoyangCredit: 0,
+  totalDesignCredit: 2,
+};
 
 export default SemesterHeader;

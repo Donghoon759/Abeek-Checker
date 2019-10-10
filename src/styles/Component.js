@@ -119,12 +119,14 @@ export const SubContent = styled.span`
   font-size: 12px;
 `;
 
-export const SubHeader = styled.header`
+export const SubHeader = styled.div`
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 `;
+
+export const ContentRow = styled(SubHeader)``;
 
 export const CenterContent = styled.span`
   width: 50%;

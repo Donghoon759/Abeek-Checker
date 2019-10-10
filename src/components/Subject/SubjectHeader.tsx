@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   StyledSubjectHeader,
   StyledSubjectTitle,
@@ -26,18 +25,6 @@ const SubjectHeader = (props: SubjectHeaderProps) => {
           {props.category} {props.subjectCredit}학점
         </RightContent>
       </StyledSubjectHeader>
-      {props.subjectMajorCredit && (
-        <Detail>전공 {props.subjectMajorCredit}학점</Detail>
-      )}
-      {props.subjectMajorBaseCredit && (
-        <Detail>전공기반 {props.subjectMajorBaseCredit}학점</Detail>
-      )}
-      {props.subjectSoyangCredit && (
-        <Detail>기본소양 {props.subjectSoyangCredit}학점</Detail>
-      )}
-      {props.subjectDesignCredit && (
-        <Detail>설계 {props.subjectDesignCredit}학점</Detail>
-      )}
     </>
   );
 };
