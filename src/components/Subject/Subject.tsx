@@ -7,18 +7,18 @@ import SubjectFooter from './SubjectFooter';
 const Subject = () => {
   return (
     <SubjectWrapper>
-      <SubjectHeader
-        title={'1학년 1학기'}
-        category={'전공'}
-        subjectCredit={3}
-        subjectMajorCredit={3}
-        subjectMajorBaseCredit={0}
-        subjectSoyangCredit={0}
-        subjectDesignCredit={2}
-      ></SubjectHeader>
+      <SubjectHeader></SubjectHeader>
       <SubjectFooter></SubjectFooter>
     </SubjectWrapper>
   );
 };
+
+// title={'기초프로그래밍'}
+// category={'전공'}
+// subjectCredit={3}
+// subjectMajorCredit={3}
+// subjectMajorBaseCredit={0}
+// subjectSoyangCredit={0}
+// subjectDesignCredit={2}
 
 export default Subject;

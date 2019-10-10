@@ -6,7 +6,7 @@ interface SubjectWrapperProps {
   children: JSX.Element[] | JSX.Element;
 }
 
-const Subject = (props: SubjectWrapperProps) => {
+const SubjectWrapper = (props: SubjectWrapperProps) => {
   return <StyledSubjectWrapper>{props.children}</StyledSubjectWrapper>;
 };
 

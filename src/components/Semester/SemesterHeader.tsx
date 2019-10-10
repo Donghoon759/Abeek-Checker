@@ -41,13 +41,13 @@ const SemesterHeader = (props: SemesterHeaderProps) => {
   );
 };
 
-SemesterHeader.defaultProps = {
-  title: 'hello',
-  totalCredit: 1,
-  totalMajorCredit: 1,
-  totalMajorBaseCredit: 1,
-  totalSoyangCredit: 1,
-  totalDesignCredit: 1,
-};
+// SemesterHeader.defaultProps = {
+//   title: 'hello',
+//   totalCredit: 1,
+//   totalMajorCredit: 1,
+//   totalMajorBaseCredit: 1,
+//   totalSoyangCredit: 1,
+//   totalDesignCredit: 1,
+// };
 
 export default SemesterHeader;

@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StyledSubjectWrapper } from '../../styles/Component';
+import { StyledSubjectFooter } from '../../styles/Component';
 
 // interface SubjectProps {}
 
-const StyledSubject = styled.div`
-  display: flexbox;
-`;
-
 const SubjectFooter = () => {
-  return <StyledSubject>aaa</StyledSubject>;
+  return <StyledSubjectFooter>과목 추가</StyledSubjectFooter>;
 };
 
 export default SubjectFooter;

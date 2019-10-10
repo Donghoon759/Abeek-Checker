@@ -92,7 +92,7 @@ export const StyledSemesterFooter = styled.div`
 export const StyledSubjectWrapper = styled.article`
   border-radius: 3px;
   border-bottom: 1px solid #ccc;
-  background-color: #fff;
+  background-color: #f0f0f0;
   position: relative;
   padding: 10px;
   cursor: pointer;
@@ -102,7 +102,7 @@ export const StyledSubjectWrapper = styled.article`
 `;
 
 export const StyledSubjectHeader = styled(Header)`
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #fff;
   padding-bottom: 6px;
   color: #000;
 `;
@@ -131,4 +131,19 @@ export const CenterContent = styled.span`
   text-align: right;
   padding-right: 10px;
   font-size: 13px;
+`;
+
+export const Detail = styled.div`
+  font-size: 12px;
+  color: #4d4d4d;
+  white-space: pre-wrap;
+`;
+
+export const StyledSubjectFooter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 10px;
 `;
