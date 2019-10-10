@@ -1,8 +1,14 @@
 import React from 'react';
-import './App.css';
+import Board from './components/Board';
+import GlobalStyle from './components/GlobalStyle';
 
-const App: React.FC = () => {
-  return <div className="App"></div>;
+const App = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <Board />
+    </>
+  );
 };
 
 export default App;
