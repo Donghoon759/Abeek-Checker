@@ -1,28 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Detail } from '../../styles/Component';
 
-interface SubjectContentProps {
-  subjectMajorCredit?: number;
-  subjectMajorBaseCredit?: number;
-  subjectSoyangCredit?: number;
-  subjectDesignCredit?: number;
-}
+const SubjectContent = () => {
+  const [subjectMajorCredit, setSubjectMajorCredit] = useState<number>(1);
+  const [subjectMajorBaseCredit, setSubjectMajorBaseCredit] = useState<number>(
+    1,
+  );
+  const [subjectSoyangCredit, setSubjectSoyangCredit] = useState<number>(1);
+  const [subjectDesignCredit, setSubjectDesignCredit] = useState<number>(1);
 
-const SubjectContent = (props: SubjectContentProps) => {
   return (
     <>
-      {props.subjectMajorCredit && (
-        <Detail>전공 {props.subjectMajorCredit}학점</Detail>
+      {subjectMajorCredit && <Detail>전공 {subjectMajorCredit}학점</Detail>}
+      {subjectMajorBaseCredit && (
+        <Detail>전공기반 {subjectMajorBaseCredit}학점</Detail>
       )}
-      {props.subjectMajorBaseCredit && (
-        <Detail>전공기반 {props.subjectMajorBaseCredit}학점</Detail>
+      {subjectSoyangCredit && (
+        <Detail>기본소양 {subjectSoyangCredit}학점</Detail>
       )}
-      {props.subjectSoyangCredit && (
-        <Detail>기본소양 {props.subjectSoyangCredit}학점</Detail>
-      )}
-      {props.subjectDesignCredit && (
-        <Detail>설계 {props.subjectDesignCredit}학점</Detail>
-      )}
+      {subjectDesignCredit && <Detail>설계 {subjectDesignCredit}학점</Detail>}
     </>
   );
 };

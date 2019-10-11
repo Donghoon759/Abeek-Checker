@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Title,
   RightContent,
@@ -17,22 +17,26 @@ interface SemesterHeaderProps {
   totalDesignCredit: number;
 }
 
-const SemesterHeader = (props: SemesterHeaderProps) => {
+const SemesterHeader = () => {
+  const [title, setTitle] = useState<string>('1학년 1학기');
+  const [totalCredit, setTotalCredit] = useState<number>(0);
+  const [totalMajorCredit, setTotalMajorCredit] = useState<number>(0);
+  const [totalMajorBaseCredit, setTotalMajorBaseCredit] = useState<number>(0);
+  const [totalSoyangCredit, setTotalSoyangCredit] = useState<number>(0);
+  const [totalDesignCredit, setTotalDesignCredit] = useState<number>(0);
   return (
     <>
       <StyledSemesterHeader>
-        <Title>{props.title}</Title>
-        <RightContent>총 {props.totalCredit}/150학점</RightContent>
+        <Title>{title}</Title>
+        <RightContent>총 {totalCredit}/150학점</RightContent>
       </StyledSemesterHeader>
       <ContentRow>
-        <CenterContent>전공 : {props.totalMajorCredit}/70</CenterContent>
-        <CenterContent>
-          전공기반 : {props.totalMajorBaseCredit}/22
-        </CenterContent>
+        <CenterContent>전공 : {totalMajorCredit}/70</CenterContent>
+        <CenterContent>전공기반 : {totalMajorBaseCredit}/22</CenterContent>
       </ContentRow>
       <ContentRow>
-        <CenterContent>설계 : {props.totalDesignCredit}/16</CenterContent>
-        <CenterContent>기본소양 : {props.totalSoyangCredit}/15</CenterContent>
+        <CenterContent>설계 : {totalDesignCredit}/16</CenterContent>
+        <CenterContent>기본소양 : {totalSoyangCredit}/15</CenterContent>
       </ContentRow>
     </>
   );
