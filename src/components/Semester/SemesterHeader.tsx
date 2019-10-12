@@ -17,8 +17,8 @@ interface SemesterHeaderProps {
   totalDesignCredit: number;
 }
 
-const SemesterHeader = () => {
-  const [title, setTitle] = useState<string>('1학년 1학기');
+const SemesterHeader = props => {
+  const [title, setTitle] = useState<string>(props.title);
   const [totalCredit, setTotalCredit] = useState<number>(0);
   const [totalMajorCredit, setTotalMajorCredit] = useState<number>(0);
   const [totalMajorBaseCredit, setTotalMajorBaseCredit] = useState<number>(0);

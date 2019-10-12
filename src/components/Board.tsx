@@ -2,10 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Semester from './Semester/Semester';
 
-// interface BoardProps {
-//   children: JSX.Element[] | JSX.Element;
-// }
-
 const StyledBoard = styled.div`
   background-color: #3179ba;
   overflow-y: hidden;
@@ -17,10 +13,12 @@ const StyledBoard = styled.div`
   height: 100vh;
 `;
 
-const Board = () => {
+const Board = ({ data }) => {
   return (
     <StyledBoard>
-      <Semester />
+      {data.map((item, index) => {
+        return <Semester semester={item} />;
+      })}
     </StyledBoard>
   );
 };

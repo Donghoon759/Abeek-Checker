@@ -6,7 +6,7 @@ import Subject from '../Subject/Subject';
 
 interface SemesterProps {}
 
-const Semester = () => {
+const Semester = ({ semester }) => {
   return (
     <>
       <SemesterWrapper>
