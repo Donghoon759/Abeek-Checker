@@ -2,6 +2,26 @@
 
 // }
 
+type DataState = {
+  title: string;
+  totalCredit: number;
+  totalMajorCredit: number;
+  totalMajorBaseCredit: number;
+  totalSoyangCredit: number;
+  totalDesignCredit: number;
+  category: string;
+  subjectCredit: number;
+  subjectMajorCredit: number;
+  subjectMajorBaseCredit: number;
+  subjectSoyangCredit: number;
+  subjectDesignCredit: number;
+};
+
+type SemesterAction =
+  | ReturnType<typeof createSemester>
+  | ReturnType<typeof editSemester>
+  | ReturnType<typeof deleteSemester>;
+
 export const initialState = {
   Semesters: [
     {
@@ -63,23 +83,23 @@ export const initialState = {
   ],
 };
 
-export const CREATE_SEMESTER = 'CREATE_SEMESTER';
-export const EDIT_SEMESTER = 'EDIT_SEMESTER';
-export const DELETE_SEMESTER = 'DELETE_SEMESTER';
+export const CREATE_SEMESTER = 'CREATE_SEMESTER' as const;
+export const EDIT_SEMESTER = 'EDIT_SEMESTER' as const;
+export const DELETE_SEMESTER = 'DELETE_SEMESTER' as const;
 
-export const CREATE_SUBJECT = 'CREATE_SUBJECT';
-export const EDIT_SUBJECT = 'EDIT_SUBJECT';
-export const DELETE_SUBJECT = 'DELETE_SUBJECT';
+export const CREATE_SUBJECT = 'CREATE_SUBJECT' as const;
+export const EDIT_SUBJECT = 'EDIT_SUBJECT' as const;
+export const DELETE_SUBJECT = 'DELETE_SUBJECT' as const;
 
 export const createSubject = () => ({ type: CREATE_SUBJECT });
 export const editSubject = () => ({ type: EDIT_SUBJECT });
 export const deleteSubject = () => ({ type: DELETE_SUBJECT });
 
-export const createSEMESTER = () => ({ type: CREATE_SEMESTER });
-export const editSEMESTER = () => ({ type: EDIT_SEMESTER });
-export const deleteSEMESTER = () => ({ type: DELETE_SEMESTER });
+export const createSemester = () => ({ type: CREATE_SEMESTER });
+export const editSemester = () => ({ type: EDIT_SEMESTER });
+export const deleteSemester = () => ({ type: DELETE_SEMESTER });
 
-const reducer = (state = initialState, action) => {
+const reducer = (state: DataState = initialState, action: SemesterAction) => {
   switch (action.type) {
     case CREATE_SUBJECT: {
       return {

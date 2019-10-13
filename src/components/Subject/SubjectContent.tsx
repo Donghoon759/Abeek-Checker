@@ -8,7 +8,7 @@ const SubjectContent = () => {
   );
   const [subjectSoyangCredit, setSubjectSoyangCredit] = useState<number>(1);
   const [subjectDesignCredit, setSubjectDesignCredit] = useState<number>(1);
-
+    
   return (
     <>
       {subjectMajorCredit && <Detail>전공 {subjectMajorCredit}학점</Detail>}
