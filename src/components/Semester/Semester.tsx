@@ -3,14 +3,18 @@ import SemesterHeader from './SemesterHeader';
 import SemesterFooter from './SemesterFooter';
 import SemesterWrapper from './SemesterWrapper';
 import Subject from '../Subject/Subject';
+import { SemesterStateType } from '../../store/semester';
 
-interface SemesterProps {}
+type Props = {
+  semester: SemesterStateType;
+  key: number;
+};
 
-const Semester = ({ semester }) => {
+const Semester = ({ semester, key }: Props) => {
   return (
     <>
       <SemesterWrapper>
-        <SemesterHeader />
+        <SemesterHeader semester={semester} />
         <Subject></Subject>
         <SemesterFooter></SemesterFooter>
       </SemesterWrapper>

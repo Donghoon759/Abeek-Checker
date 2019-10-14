@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import data from '../store/data';
+import semester from '../store/semester';
+import subject from '../store/subject';
 
-export interface StoreState {}
-
-const rootReducer = combineReducers<StoreState>({
-  data,
+const rootReducer = combineReducers({
+  semester,
+  subject,
 });
 
 export default rootReducer;
+
+export type RootState = ReturnType<typeof rootReducer>;

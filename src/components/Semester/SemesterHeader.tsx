@@ -6,19 +6,24 @@ import {
   ContentRow,
   StyledSemesterHeader,
 } from '../../styles/Component';
+import { SemesterStateType } from '../../store/semester';
 
 // 총 학점, 전공, 전공기반, 기본소양, 설계
-interface SemesterHeaderProps {
-  title: string;
-  totalCredit: number;
-  totalMajorCredit: number;
-  totalMajorBaseCredit: number;
-  totalSoyangCredit: number;
-  totalDesignCredit: number;
-}
+// interface SemesterHeaderProps {
+//   title: string;
+//   totalCredit: number;
+//   totalMajorCredit: number;
+//   totalMajorBaseCredit: number;
+//   totalSoyangCredit: number;
+//   totalDesignCredit: number;
+// }
 
-const SemesterHeader = props => {
-  const [title, setTitle] = useState<string>(props.title);
+type Props = {
+  semester: SemesterStateType;
+};
+
+const SemesterHeader = ({ semester }: Props) => {
+  const [title, setTitle] = useState<string>(semester.title);
   const [totalCredit, setTotalCredit] = useState<number>(0);
   const [totalMajorCredit, setTotalMajorCredit] = useState<number>(0);
   const [totalMajorBaseCredit, setTotalMajorBaseCredit] = useState<number>(0);
@@ -27,16 +32,20 @@ const SemesterHeader = props => {
   return (
     <>
       <StyledSemesterHeader>
-        <Title>{title}</Title>
-        <RightContent>총 {totalCredit}/150학점</RightContent>
+        <Title>{semester.title}</Title>
+        <RightContent>총 {semester.totalCredit}/150학점</RightContent>
       </StyledSemesterHeader>
       <ContentRow>
-        <CenterContent>전공 : {totalMajorCredit}/70</CenterContent>
-        <CenterContent>전공기반 : {totalMajorBaseCredit}/22</CenterContent>
+        <CenterContent>전공 : {semester.totalMajorCredit}/70</CenterContent>
+        <CenterContent>
+          전공기반 : {semester.totalMajorBaseCredit}/22
+        </CenterContent>
       </ContentRow>
       <ContentRow>
-        <CenterContent>설계 : {totalDesignCredit}/16</CenterContent>
-        <CenterContent>기본소양 : {totalSoyangCredit}/15</CenterContent>
+        <CenterContent>설계 : {semester.totalDesignCredit}/16</CenterContent>
+        <CenterContent>
+          기본소양 : {semester.totalSoyangCredit}/15
+        </CenterContent>
       </ContentRow>
     </>
   );

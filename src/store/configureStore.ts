@@ -1,7 +1,7 @@
-import modules, { StoreState } from '../modules';
+import modules, { RootState } from '../modules';
 import { createStore, Store } from 'redux';
 
-export default function configureStore(): Store<StoreState> {
+export default function configureStore(): Store<RootState> {
   const store = createStore(
     modules,
     (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
