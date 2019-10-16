@@ -74,36 +74,37 @@ export const CREATE_SUBJECT = 'CREATE_SUBJECT' as const;
 export const EDIT_SUBJECT = 'EDIT_SUBJECT' as const;
 export const DELETE_SUBJECT = 'DELETE_SUBJECT' as const;
 
-export const createSubject = (payload: SubjectStateType[]) => ({
+export const createSubject = (payload: SubjectStateType) => ({
   type: CREATE_SUBJECT,
   payload: {
     id: autoId++,
-    parentId,
-    title,
-    category,
-    subjectCredit,
-    subjectMajorCredit,
-    subjectMajorBaseCredit,
-    subjectSoyangCredit,
-    subjectDesignCredit,
+    parentId: payload.parentId,
+    title: payload.title,
+    category: payload.category,
+    subjectCredit: payload.subjectCredit,
+    subjectMajorCredit: payload.subjectMajorCredit,
+    subjectMajorBaseCredit: payload.subjectMajorBaseCredit,
+    subjectSoyangCredit: payload.subjectSoyangCredit,
+    subjectDesignCredit: payload.subjectDesignCredit,
   },
 });
 
-export const editSubject = () => ({
+export const editSubject = (payload: SubjectStateType) => ({
   type: EDIT_SUBJECT,
   payload: {
-    id,
-    title,
-    category,
-    subjectCredit,
-    subjectMajorCredit,
-    subjectMajorBaseCredit,
-    subjectSoyangCredit,
-    subjectDesignCredit,
+    id: payload.id,
+    parentId: payload.parentId,
+    title: payload.title,
+    category: payload.category,
+    subjectCredit: payload.subjectCredit,
+    subjectMajorCredit: payload.subjectMajorCredit,
+    subjectMajorBaseCredit: payload.subjectMajorBaseCredit,
+    subjectSoyangCredit: payload.subjectSoyangCredit,
+    subjectDesignCredit: payload.subjectDesignCredit,
   },
 });
 
-export const deleteSubject = () => ({
+export const deleteSubject = (id: number) => ({
   type: DELETE_SUBJECT,
   payload: { id },
 });
@@ -128,13 +129,13 @@ const subject = (
     case EDIT_SUBJECT: {
       return {
         Subjects: [
-          state.Subjects.filter(subject => subject.id !== action.payload.id),
+          ...state.Subjects.filter(subject => subject.id !== action.payload.id),
           action.payload,
         ],
       };
     }
     default: {
-      return;
+      return state;
     }
   }
 };

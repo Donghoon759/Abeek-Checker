@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Semester from './Semester/Semester';
+import useSemesters from '../hooks/useSemesters';
 import useSubjects from '../hooks/useSubjects';
 import { SemesterStateType } from '../store/semester';
 
@@ -15,17 +16,20 @@ const StyledBoard = styled.div`
   height: 100vh;
 `;
 
-type SemesterComponentType = {
-  semester: SemesterStateType;
-  key: number;
-};
+// type SemesterComponentType = {
+//   semester: SemesterStateType;
+//   key: number;
+// };
 
 const Board = () => {
+  const semesters = useSemesters();
   const subjects = useSubjects();
   return (
     <StyledBoard>
-      {subjects.map((subject: any) => {
-        return <Semester semester={subject} key={subject.id} />;
+      {semesters.map((semester: any) => {
+        return (
+          <Semester semester={semester} subjects={subjects} key={semester.id} />
+        );
       })}
     </StyledBoard>
   );

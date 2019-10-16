@@ -4,21 +4,32 @@ import SemesterFooter from './SemesterFooter';
 import SemesterWrapper from './SemesterWrapper';
 import Subject from '../Subject/Subject';
 import { SemesterStateType } from '../../store/semester';
+import useSubjects from '../../hooks/useSubjects';
+import { SubjectStateType } from '../../store/subject';
 
 type Props = {
   semester: SemesterStateType;
+  subjects: SubjectStateType[];
   key: number;
 };
 
-const Semester = ({ semester, key }: Props) => {
+type Propss = {
+  subjects: JSX.Element;
+};
+
+type SubjectComponentsType = SubjectStateType[];
+
+const Semester = ({ semester, subjects, key }: Props) => {
+  const subjectss = subjects.map(subject => {
+    if (semester.id === subject.parentId)
+      return <Subject subject={subject} key={subject.id} />;
+  });
   return (
-    <>
-      <SemesterWrapper>
-        <SemesterHeader semester={semester} />
-        <Subject></Subject>
-        <SemesterFooter></SemesterFooter>
-      </SemesterWrapper>
-    </>
+    <SemesterWrapper>
+      <SemesterHeader semester={semester} />
+      <div>{subjectss}</div>
+      <SemesterFooter></SemesterFooter>
+    </SemesterWrapper>
   );
 };
 

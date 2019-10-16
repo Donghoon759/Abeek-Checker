@@ -50,31 +50,31 @@ export const EDIT_SEMESTER = 'EDIT_SEMESTER' as const;
 export const DELETE_SEMESTER = 'DELETE_SEMESTER' as const;
 
 // 액션 생성 함수 사용
-export const createSemester = (payload: SemesterStateType[]) => ({
+export const createSemester = (payload: SemesterStateType) => ({
   type: CREATE_SEMESTER,
   payload: {
     id: autoId++,
-    title: title,
-    totalCredit,
-    totalMajorCredit,
-    totalMajorBaseCredit,
-    totalSoyangCredit,
-    totalDesignCredit,
+    title: payload.title,
+    totalCredit: payload.totalCredit,
+    totalMajorCredit: payload.totalMajorCredit,
+    totalMajorBaseCredit: payload.totalMajorBaseCredit,
+    totalSoyangCredit: payload.totalSoyangCredit,
+    totalDesignCredit: payload.totalDesignCredit,
   },
 });
-export const editSemester = () => ({
+export const editSemester = (payload: SemesterStateType) => ({
   type: EDIT_SEMESTER,
   payload: {
-    id,
-    title,
-    totalCredit,
-    totalMajorCredit,
-    totalMajorBaseCredit,
-    totalSoyangCredit,
-    totalDesignCredit,
+    id: payload.id,
+    title: payload.title,
+    totalCredit: payload.totalCredit,
+    totalMajorCredit: payload.totalMajorCredit,
+    totalMajorBaseCredit: payload.totalMajorBaseCredit,
+    totalSoyangCredit: payload.totalSoyangCredit,
+    totalDesignCredit: payload.totalDesignCredit,
   },
 });
-export const deleteSemester = () => ({
+export const deleteSemester = (id: number) => ({
   type: DELETE_SEMESTER,
   payload: { id },
 });
@@ -99,13 +99,15 @@ const semester = (
     case EDIT_SEMESTER: {
       return {
         Semesters: [
-          state.Semesters.filter(semester => semester.id !== action.payload.id),
+          ...state.Semesters.filter(
+            semester => semester.id !== action.payload.id,
+          ),
           action.payload,
         ],
       };
     }
     default: {
-      return;
+      return state;
     }
   }
 };

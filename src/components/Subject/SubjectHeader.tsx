@@ -6,7 +6,17 @@ import {
   Detail,
 } from '../../styles/Component';
 
-const SubjectHeader = () => {
+type Props = {
+  titleProp: string;
+  categoryProp: string;
+  subjectCreditProp: number;
+};
+
+const SubjectHeader = ({
+  titleProp,
+  categoryProp,
+  subjectCreditProp,
+}: Props) => {
   const [title, setTitle] = useState<string>('기초프로그래밍');
   const [category, setsetCategory] = useState<string>('전공');
   const [subjectCredit, setSubjectCredit] = useState<number>(0);
@@ -14,9 +24,9 @@ const SubjectHeader = () => {
   return (
     <>
       <StyledSubjectHeader>
-        <StyledSubjectTitle>{title}</StyledSubjectTitle>
+        <StyledSubjectTitle>{titleProp}</StyledSubjectTitle>
         <RightContent>
-          {category} {subjectCredit}학점
+          {categoryProp} {subjectCreditProp}학점
         </RightContent>
       </StyledSubjectHeader>
     </>
