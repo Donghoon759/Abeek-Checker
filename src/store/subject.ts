@@ -32,7 +32,7 @@ export const initialState: SubjectState = {
       subjectMajorCredit: 3,
       subjectMajorBaseCredit: 0,
       subjectSoyangCredit: 0,
-      subjectDesignCredit: 0,
+      subjectDesignCredit: 2,
     },
     {
       id: autoId++,

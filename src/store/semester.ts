@@ -106,6 +106,7 @@ const semester = (
         ],
       };
     }
+
     default: {
       return state;
     }

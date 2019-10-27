@@ -105,6 +105,7 @@ export const StyledSubjectHeader = styled(Header)`
   border-bottom: 1px solid #fff;
   padding-bottom: 6px;
   color: #000;
+  flex-flow: row wrap;
 `;
 
 export const StyledSubjectTitle = styled(Title)`

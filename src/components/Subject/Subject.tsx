@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SubjectWrapper from './SubjectWrapper';
 import SubjectHeader from './SubjectHeader';
 import SubjectContent from './SubjectContent';
-import SubjectFooter from './SubjectFooter';
 import { SubjectStateType } from '../../store/subject';
+import { EDIT_SEMESTER } from '../../store/semester';
 
 type Props = {
   subject: SubjectStateType;
@@ -12,20 +12,17 @@ type Props = {
 
 const Subject = ({ subject, key }: Props) => {
   return (
-    <SubjectWrapper>
-      <SubjectHeader
-        titleProp={subject.title}
-        categoryProp={subject.category}
-        subjectCreditProp={subject.subjectCredit}
-      />
-      <SubjectContent
-        subjectMajorCreditProp={subject.subjectMajorCredit}
-        subjectMajorBaseCreditProp={subject.subjectMajorBaseCredit}
-        subjectSoyangCreditProp={subject.subjectSoyangCredit}
-        subjectDesignCreditProp={subject.subjectDesignCredit}
-      />
-      <SubjectFooter></SubjectFooter>
-    </SubjectWrapper>
+    <>
+      <SubjectWrapper>
+        <SubjectHeader subject={subject} />
+        {/* <SubjectContent
+          subjectMajorCreditProp={subject.subjectMajorCredit}
+          subjectMajorBaseCreditProp={subject.subjectMajorBaseCredit}
+          subjectSoyangCreditProp={subject.subjectSoyangCredit}
+          subjectDesignCreditProp={subject.subjectDesignCredit}
+        /> */}
+      </SubjectWrapper>
+    </>
   );
 };
 

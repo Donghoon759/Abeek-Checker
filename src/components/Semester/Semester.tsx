@@ -6,6 +6,7 @@ import Subject from '../Subject/Subject';
 import { SemesterStateType } from '../../store/semester';
 import useSubjects from '../../hooks/useSubjects';
 import { SubjectStateType } from '../../store/subject';
+import SubjectFooter from '../Subject/SubjectFooter';
 
 type Props = {
   semester: SemesterStateType;
@@ -28,7 +29,8 @@ const Semester = ({ semester, subjects, key }: Props) => {
     <SemesterWrapper>
       <SemesterHeader semester={semester} />
       <div>{subjectss}</div>
-      <SemesterFooter></SemesterFooter>
+      <SubjectFooter></SubjectFooter>
+      {/* <SemesterFooter></SemesterFooter> */}
     </SemesterWrapper>
   );
 };
