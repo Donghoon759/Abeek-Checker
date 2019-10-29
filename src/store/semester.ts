@@ -66,7 +66,6 @@ export const editSemester = (payload: SemesterStateType) => ({
   type: EDIT_SEMESTER,
   payload: {
     id: payload.id,
-    title: payload.title,
     totalCredit: payload.totalCredit,
     totalMajorCredit: payload.totalMajorCredit,
     totalMajorBaseCredit: payload.totalMajorBaseCredit,
@@ -97,12 +96,18 @@ const semester = (
       };
     }
     case EDIT_SEMESTER: {
+      const findingSemester = state.Semesters.filter(
+        semester => semester.id === action.payload.id,
+      );
+      console.log(findingSemester);
+      const title = findingSemester[0].title;
+      console.log(title);
       return {
         Semesters: [
           ...state.Semesters.filter(
             semester => semester.id !== action.payload.id,
           ),
-          action.payload,
+          { ...action.payload, title: title },
         ],
       };
     }
