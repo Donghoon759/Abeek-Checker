@@ -30,7 +30,7 @@ const Semester = ({ semester, subjects, key }: Props) => {
   let totalMajorBaseCredit = 0;
   let totalSoyangCredit = 0;
   let totalDesignCredit = 0;
-  console.log(totalMajorBaseCredit, totalSoyangCredit, totalDesignCredit);
+
   const dispatch = useDispatch();
   const subjectFiltered = subjects.filter(subject => {
     return semester.id === subject.parentId;
@@ -50,7 +50,7 @@ const Semester = ({ semester, subjects, key }: Props) => {
     dispatch({
       type: EDIT_SEMESTER,
       payload: {
-        id: subjectFiltered[0].id,
+        id: subjectFiltered[0].parentId,
         totalCredit,
         totalMajorCredit,
         totalMajorBaseCredit,
