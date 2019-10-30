@@ -23,13 +23,13 @@ type Propss = {
 type SubjectComponentsType = SubjectStateType[];
 
 const Semester = ({ semester, subjects, key }: Props) => {
-  let id = 0;
-  let title = 0;
-  let totalCredit = 0;
-  let totalMajorCredit = 0;
-  let totalMajorBaseCredit = 0;
-  let totalSoyangCredit = 0;
-  let totalDesignCredit = 0;
+  let id = 0,
+    title = 0,
+    totalCredit = 0,
+    totalMajorCredit = 0,
+    totalMajorBaseCredit = 0,
+    totalSoyangCredit = 0,
+    totalDesignCredit = 0;
 
   const dispatch = useDispatch();
   const subjectFiltered = subjects.filter(subject => {
@@ -69,7 +69,6 @@ const Semester = ({ semester, subjects, key }: Props) => {
         })}
       </div>
       <SubjectFooter></SubjectFooter>
-      {/* <SemesterFooter></SemesterFooter> */}
     </SemesterWrapper>
   );
 };
