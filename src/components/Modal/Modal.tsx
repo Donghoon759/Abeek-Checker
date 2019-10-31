@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import useGlobal from '../../hooks/useGlobal';
 import { StyledModalOverlay, StyledModal } from '../../styles/Component';
+import { CLOSE_MODAL } from '../../store/global';
 
 // type Props = {
 //   isOpen: boolean;
@@ -9,12 +10,20 @@ import { StyledModalOverlay, StyledModal } from '../../styles/Component';
 // };
 
 const Modal = () => {
+  const dispatch = useDispatch();
   const { isOpen } = useGlobal();
+
+  const closeModal = () => {
+    dispatch({
+      type: CLOSE_MODAL,
+    });
+  };
+
   return (
     <>
       {isOpen ? (
         <>
-          <StyledModalOverlay />
+          <StyledModalOverlay onClick={closeModal} />
           <StyledModal>
             <p className="title">Modal Title</p>
             <div className="content">
@@ -26,7 +35,7 @@ const Modal = () => {
               </p>
             </div>
             <div className="button-wrap">
-              <button>Confirm</button>
+              <button onClick={closeModal}>close</button>
             </div>
           </StyledModal>
         </>

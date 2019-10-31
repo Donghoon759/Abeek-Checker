@@ -149,6 +149,7 @@ export const StyledSubjectFooter = styled.div`
   width: 100%;
   position: relative;
   height: 10px;
+  cursor: pointer;
 `;
 
 export const StyledModalOverlay = styled.div`
