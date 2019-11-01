@@ -70,12 +70,12 @@ export const initialState: SubjectState = {
   ],
 };
 
-export const CREATE_SUBJECT = 'CREATE_SUBJECT' as const;
+export const ADD_SUBJECT = 'ADD_SUBJECT' as const;
 export const EDIT_SUBJECT = 'EDIT_SUBJECT' as const;
 export const DELETE_SUBJECT = 'DELETE_SUBJECT' as const;
 
 export const createSubject = (payload: SubjectStateType) => ({
-  type: CREATE_SUBJECT,
+  type: ADD_SUBJECT,
   payload: {
     id: autoId++,
     parentId: payload.parentId,
@@ -114,7 +114,7 @@ const subject = (
   action: SubjectAction,
 ): SubjectState => {
   switch (action.type) {
-    case CREATE_SUBJECT: {
+    case ADD_SUBJECT: {
       return {
         Subjects: [...state.Subjects, action.payload],
       };
