@@ -4,6 +4,7 @@ import useGlobal from '../../hooks/useGlobal';
 import { StyledModalOverlay, StyledModal } from '../../styles/Component';
 import { CLOSE_MODAL } from '../../store/global';
 import { ADD_SUBJECT } from '../../store/subject';
+import Form from '../Form/Form';
 
 export const useInput = (initValue: any) => {
   const [value, setter] = useState(initValue);
@@ -56,33 +57,37 @@ const Modal = () => {
           <StyledModal>
             <form onSubmit={onSubmit}>
               <div className="form__box">
-                <div className="input__box">
-                  <input
-                    className="form__input"
-                    name="title"
-                    type="text"
-                    value={title}
-                    onChange={onChangeTitle}
-                    required
-                  />
-                  <span className="highlight" />
-                  <span className="bar" />
-                  <label>ID</label>
-                </div>
-
-                <div className="input__box">
-                  <input
-                    className="form__input"
-                    name="category"
-                    type="text"
-                    value={category}
-                    onChange={onChangeCategory}
-                    required
-                  />
-                  <span className="highlight" />
-                  <span className="bar" />
-                  <label>PASSWORD</label>
-                </div>
+                <Form value={title} onChange={onChangeTitle} label={'과목명'} />
+                <Form
+                  value={category}
+                  onChange={onChangeCategory}
+                  label={'과목구분'}
+                />
+                <Form
+                  value={subjectCredit}
+                  onChange={onChangeSubjectCredit}
+                  label={'학점'}
+                />
+                <Form
+                  value={subjectMajorCredit}
+                  onChange={onChangeSubjectMajorCredit}
+                  label={'전공학점'}
+                />
+                <Form
+                  value={subjectMajorBaseCredit}
+                  onChange={onChangeSubjectMajorCredit}
+                  label={'전공기반학점'}
+                />
+                <Form
+                  value={subjectSoyangCredit}
+                  onChange={onChangeSubjectSoyangCredit}
+                  label={'기본소양학점'}
+                />
+                <Form
+                  value={subjectDesignCredit}
+                  onChange={onChangeSubjectDesignCredit}
+                  label={'설계학점'}
+                />
                 <input
                   className="form__submit"
                   type="submit"
